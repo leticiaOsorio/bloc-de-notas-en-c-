@@ -29,7 +29,7 @@ namespace block
             //leer eel  archivo seleccionado 
             System.IO.StreamReader file = new System.IO.StreamReader(openFileDialog1.FileName);
             //pasa el texto en unaa variable
-            v = file.ReadLine();
+            v = file.ReadToEnd();
             //manda a mostrar el richtextbox
             richTextBox1.Text = v.ToString();
 
@@ -46,7 +46,7 @@ namespace block
             { 
             using (var savefile = new System.IO.StreamWriter(saveFileDialog1.FileName + ".txt"))
                 {
-                    savefile.WriteLine(richTextBox1.Text);
+                    savefile.Write(richTextBox1.Text);
             
                  }
             }
